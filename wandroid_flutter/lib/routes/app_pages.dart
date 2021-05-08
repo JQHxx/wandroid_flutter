@@ -1,44 +1,13 @@
-
 import 'package:get/get.dart';
+import 'package:wandroid_flutter/pages/main/main_binding.dart';
+import 'package:wandroid_flutter/pages/main/main_page.dart';
 
 part './app_routes.dart';
 
 abstract class AppPages {
   static final pages = [
-    /*
     GetPage(
-        name: Routes.MAIN,
-        page: () => MainPage(),
-        binding: MainBinding(),
-        transition: Transition.zoom,
-        middlewares: [
-          //RouteAuthMiddleware(priority: 1),
-        ]),
-    GetPage(
-      name: Routes.SPLASH,
-      page: () => SplashPage(),
-      binding: SplashBinding(),
-    ),
-    GetPage(
-      name: Routes.HOME,
-      page: () => HomePage(),
-      binding: HomeBinding(),
-    ),
-    GetPage(
-      name: Routes.SIGN_UP,
-      page: () => SignUpPage(),
-      binding: SignUpBinding(),
-    ),
-    GetPage(
-      name: Routes.LOGIN,
-      page: () => LoginPage(),
-      binding: LoginBinding(),
-    ),
-    GetPage(
-      name: Routes.SETTING,
-      page: () => SettingPage(),
-    ),
-    */
+        name: Routes.INITIAL, page: () => MainPage(), binding: MainBinding()),
   ];
 }
 

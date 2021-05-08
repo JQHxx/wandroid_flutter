@@ -26,19 +26,7 @@ void main() async {
 
   runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,
-    initialRoute: Routes.MAIN,
-    popGesture: Get.isPopGestureEnable,
-    navigatorKey: Get.key,
- // 添加一个回调语言选项，以备上面指定的语言翻译不存在
-    enableLog: true,
-    logWriterCallback: (String text, {bool isError = false}) {
-      print(text);
-    },
-    routingCallback: (routing) {
-      if (routing.current == Routes.HOME) {
-        // 如果登录。。。
-      }
-    },
+    initialRoute: Routes.INITIAL,
     builder: (context, child) => Scaffold(
       // Global GestureDetector that will dismiss the keyboard
       body: GestureDetector(
@@ -56,37 +44,9 @@ void main() async {
   ));
 }
 
-/*
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await GloabConfig.init();
-  // 全局依赖注入
-  await DenpendencyInjection.init();
-  runApp(GetMaterialApp(
-    debugShowCheckedModeBanner: false,
-    initialRoute: '/',
-    builder: (context, child) => Scaffold(
-      // Global GestureDetector that will dismiss the keyboard
-      body: GestureDetector(
-        onTap: () {
-          hideKeyboard(context);
-        },
-        child: child,
-      ),
-    ),
-    theme: appThemeData,
-    defaultTransition: Transition.fade,
-    getPages: AppPages.pages,
-    initialBinding: SplashBinding(),
-    home: SplashPage(),
-  ));
-}
-*/
-
 void hideKeyboard(BuildContext context) {
   FocusScopeNode currentFocus = FocusScope.of(context);
   if (!currentFocus.hasPrimaryFocus && currentFocus.focusedChild != null) {
     FocusManager.instance.primaryFocus.unfocus();
   }
 }
-
