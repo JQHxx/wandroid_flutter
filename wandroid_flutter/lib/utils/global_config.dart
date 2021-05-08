@@ -1,9 +1,12 @@
 import 'package:get/get.dart';
 import 'package:wandroid_flutter/data/api/chapters_api.dart';
+import 'package:wandroid_flutter/pages/public/public_controller.dart';
 
 /// 初始化全局配置
 class GloabConfig {
   static Future<void> init() async {
+    // 公众号
+    Get.lazyPut(() => PublicController());
     Get.lazyPut(() => ChaptersApi());
   }
 }
