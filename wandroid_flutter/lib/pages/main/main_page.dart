@@ -7,6 +7,7 @@ import 'package:wandroid_flutter/pages/project/project_page.dart';
 import 'package:wandroid_flutter/pages/public/public_page.dart';
 import 'package:wandroid_flutter/pages/system/system_page.dart';
 import 'package:wandroid_flutter/theme/app_theme.dart';
+import 'package:wandroid_flutter/widgets/alive_keeper.dart';
 
 import 'main_controller.dart';
 
@@ -16,11 +17,11 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   List<Widget> _pageList = [
-    HomePage(),
-    ProjectPage(),
-    SystemPage(),
-    NavigationPage(),
-    PublicPage()
+    Aliveer(child: HomePage()),
+    Aliveer(child: ProjectPage()),
+    Aliveer(child: SystemPage()),
+    Aliveer(child: NavigationPage()),
+    Aliveer(child: PublicPage())
   ];
   List<String> _appBarTitles = ['首页', '项目', '体系', '导航', '公众号'];
   List<BottomNavigationBarItem> _list;
