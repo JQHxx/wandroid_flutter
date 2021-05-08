@@ -6,7 +6,6 @@ class PublicController extends GetxController {
   List<ChaptersData> datas = [];
   @override
   void onInit() {
-    // TODO: implement onInit
     super.onInit();
     requestData();
   }

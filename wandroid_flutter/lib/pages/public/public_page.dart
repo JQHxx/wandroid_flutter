@@ -1,10 +1,10 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wandroid_flutter/pages/drawer/main_drawer.dart';
 import 'package:wandroid_flutter/pages/public/public_controller.dart';
 import 'package:wandroid_flutter/routes/app_pages.dart';
+import 'components/public_body.dart';
 
 class PublicPage extends StatefulWidget {
   PublicPage({Key key}) : super(key: key);
@@ -36,25 +36,7 @@ class _PublicPageState extends State<PublicPage> {
                 })
           ],
         ),
-        body: GridView.builder(
-            itemCount: controller.datas.length,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 0.0,
-                crossAxisSpacing: 0.0,
-                childAspectRatio: 3),
-            itemBuilder: (context, position) {
-              return Container(
-                color: Color.fromARGB(
-                  255,
-                  Random.secure().nextInt(200),
-                  Random.secure().nextInt(200),
-                  Random.secure().nextInt(200),
-                ),
-                alignment: Alignment.center,
-                child: Text(controller.datas[position].name),
-              );
-            }),
+        body: PublicBody(),
         drawer: Drawer(
           child: MainDrawerWidget(),
         ),

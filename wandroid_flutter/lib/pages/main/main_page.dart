@@ -77,7 +77,6 @@ class _MainPageState extends State<MainPage> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     _pageController.dispose();
     super.dispose();
   }
