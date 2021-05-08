@@ -11,7 +11,11 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text("搜索"),
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("搜索"),
+        ),
+      ),
     );
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:wandroid_flutter/pages/drawer/main_drawer.dart';
+import 'package:wandroid_flutter/routes/app_pages.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -22,7 +24,9 @@ class _HomePageState extends State<HomePage> {
               });
         }),
         title: Text("首页"),
-        actions: [IconButton(icon: Icon(Icons.search), onPressed: () {})],
+        actions: [IconButton(icon: Icon(Icons.search), onPressed: () {
+          Get.toNamed(Routes.SEARCH);
+        })],
       ),
       drawer: Drawer(
         child: MainDrawerWidget(),

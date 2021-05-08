@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wandroid_flutter/theme/app_theme.dart';
 
 class MainDrawerWidget extends StatelessWidget {
   @override
@@ -15,7 +16,7 @@ class MainDrawerWidget extends StatelessWidget {
         otherAccountsPictures: <Widget>[
           CircleAvatar(child: Icon(Icons.settings)),
         ],
-        decoration: BoxDecoration(color: Colors.green),
+        decoration: BoxDecoration(color: kPrimaryColor),
       ),
       ListTile(
           title: Text('设置'),
