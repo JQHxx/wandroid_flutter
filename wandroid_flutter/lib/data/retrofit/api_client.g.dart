@@ -17,11 +17,12 @@ class _ApiClient implements ApiClient {
   String baseUrl;
 
   @override
-  Future<HttpResponse<String>> wxarticleChapters() async {
+  Future<ChaptersBean> wxarticleChapters() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    final _result = await _dio.request<String>('/wxarticle/chapters/json',
+    final _result = await _dio.request<Map<String, dynamic>>(
+        '/wxarticle/chapters/json',
         queryParameters: queryParameters,
         options: RequestOptions(
             method: 'GET',
@@ -29,8 +30,7 @@ class _ApiClient implements ApiClient {
             extra: _extra,
             baseUrl: baseUrl),
         data: _data);
-    final value = _result.data;
-    final httpResponse = HttpResponse(value, _result);
-    return httpResponse;
+    final value = ChaptersBean.fromJson(_result.data);
+    return value;
   }
 }

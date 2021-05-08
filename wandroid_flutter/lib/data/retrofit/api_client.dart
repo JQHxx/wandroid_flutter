@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
+import 'package:wandroid_flutter/data/model/chapters_bean.dart';
 import 'base_dio.dart';
 part 'api_client.g.dart';
 
@@ -16,5 +17,5 @@ abstract class ApiClient {
  * 获取公众号列表
  */
   @GET("/wxarticle/chapters/json")
-  Future<HttpResponse<String>> wxarticleChapters();
+  Future<ChaptersBean> wxarticleChapters();
 }
