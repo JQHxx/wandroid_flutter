@@ -6,6 +6,7 @@ class ChaptersApi {
   Future<HttpResponse<String>> wxarticleChapters() async {
     HttpResponse<String> response = await ApiClient().wxarticleChapters();
     //AppLogger.d(response.data);
+    //AppLogger.d(response.response.data);
     return response;
   }
 }
