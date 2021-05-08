@@ -17,7 +17,7 @@ class PublicController extends GetxController {
 
   requestData() {
     LoginRepository().wxarticleChapters().then((value) {
-      print(value.data.length);
+      //print(value.data.length);
       datas = value.data;
       update();
     });

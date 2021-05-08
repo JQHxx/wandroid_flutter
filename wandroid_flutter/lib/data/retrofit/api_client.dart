@@ -12,6 +12,20 @@ abstract class ApiClient {
     return _ApiClient(dio, baseUrl: baseUrl);
   }
 
+  // ignore: slash_for_doc_comments
+  /**
+   * 获取首页广告
+   */
+  @GET("/banner/json")
+  Future<HttpResponse<String>> homeBanner();
+
+  // ignore: slash_for_doc_comments
+  /**
+   * 获取首页文章列表
+   */
+  @GET("/article/list/{page}/json")
+  Future<HttpResponse<String>> homeArticles(@Path() int page);
+
 // ignore: slash_for_doc_comments
 /**
  * 获取公众号列表
