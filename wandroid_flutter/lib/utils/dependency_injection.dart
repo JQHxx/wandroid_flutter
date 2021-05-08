@@ -15,6 +15,6 @@ class DenpendencyInjection {
     // // 登录信息提供者
     Get.put(LoginProvider());
 
-    Get.put(MainController());
+    //Get.put(MainController());
   }
 }
