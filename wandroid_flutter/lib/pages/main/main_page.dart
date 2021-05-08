@@ -74,4 +74,11 @@ class _MainPageState extends State<MainPage> {
   void onPageChanged(int index) {
     print(index);
   }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    _pageController.dispose();
+    super.dispose();
+  }
 }
