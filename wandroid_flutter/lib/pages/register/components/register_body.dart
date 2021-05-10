@@ -1,12 +1,11 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:wandroid_flutter/routes/app_pages.dart';
+import 'package:wandroid_flutter/pages/register/register_controller.dart';
 import 'package:wandroid_flutter/theme/app_theme.dart';
 import 'package:wandroid_flutter/widgets/app_button.dart';
 import 'package:wandroid_flutter/widgets/app_text_input.dart';
-import '../login_controller.dart';
 
-class LoginBody extends GetView<LoginController> {
+class RegisterBody extends GetView<RegisterController> {
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -55,25 +54,33 @@ class LoginBody extends GetView<LoginController> {
               border: Border(
                   bottom: BorderSide(width: 1, color: Color(0xffe5e5e5)))),
         ),
+                Container(
+          margin: EdgeInsets.only(left: 10, right: 10),
+          height: 50,
+          child: Row(
+            children: [
+              Container(
+                width: 65,
+                child: Text("确认密码"),
+              ),
+              Expanded(
+                  child: AppTextInput(
+                text: '确认密码',
+                password: true,
+                controller: controller.surePasswordController,
+              ))
+            ],
+          ),
+          decoration: BoxDecoration(
+              border: Border(
+                  bottom: BorderSide(width: 1, color: Color(0xffe5e5e5)))),
+        ),
         AppButton(
           margin: EdgeInsets.only(top: 15, left: 10, right: 10),
           buttonColor: kPrimaryColor,
-          buttonTitle: "登录",
+          buttonTitle: "注册",
           height: 50,
           tapEvent: () {},
-        ),
-        Container(
-          height: 50,
-          alignment: Alignment.center,
-          child: GestureDetector(
-            child: Text(
-              "注册账号",
-              style: TextStyle(decoration: TextDecoration.underline),
-            ),
-            onTap: () {
-              Get.toNamed(Routes.REGISTER);
-            },
-          ),
         )
       ],
     );

@@ -3,6 +3,8 @@ import 'package:wandroid_flutter/pages/login/login_binding.dart';
 import 'package:wandroid_flutter/pages/login/login_page.dart';
 import 'package:wandroid_flutter/pages/main/main_binding.dart';
 import 'package:wandroid_flutter/pages/main/main_page.dart';
+import 'package:wandroid_flutter/pages/register/register_binding.dart';
+import 'package:wandroid_flutter/pages/register/register_page.dart';
 import 'package:wandroid_flutter/pages/search/search_binding.dart';
 import 'package:wandroid_flutter/pages/search/search_page.dart';
 
@@ -17,9 +19,11 @@ abstract class AppPages {
         page: () => SearchPage(),
         binding: SearchBinding()),
     GetPage(
-        name: Routes.LOGIN,
-        page: () => LoginPage(),
-        binding: LoginBinding()),
+        name: Routes.LOGIN, page: () => LoginPage(), binding: LoginBinding()),
+    GetPage(
+        name: Routes.REGISTER,
+        page: () => RegisterPage(),
+        binding: RegisterBinding()),
   ];
 }
 

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:get/get.dart';
 import 'package:wandroid_flutter/utils/app_log.dart';
+import 'package:wandroid_flutter/widgets/app_image_widget.dart';
 import 'package:wandroid_flutter/widgets/refresh_widget.dart';
 import 'package:wandroid_flutter/widgets/webview_browser.dart';
 
@@ -28,8 +29,8 @@ class PublicBody extends GetView<HomeController> {
               height: 180,
               child: Swiper(
                 itemBuilder: (BuildContext context, int index) {
-                  return Image.network(
-                    controller.banners[index].imagePath,
+                  return AppImageWidget(
+                    imageUrl: controller.banners[index].imagePath,
                     fit: BoxFit.fill,
                   );
                 },

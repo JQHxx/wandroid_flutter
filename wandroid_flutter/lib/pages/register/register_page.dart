@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'components/register_body.dart';
+import 'register_controller.dart';
 
 class RegisterPage extends StatefulWidget {
   RegisterPage({Key key}) : super(key: key);
@@ -10,8 +14,13 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-       child: Text("注册"),
-    );
+    return GetBuilder<RegisterController>(
+        builder: (controller) => Scaffold(
+              appBar: AppBar(
+                centerTitle: false,
+                title: Text("注册"),
+              ),
+              body: RegisterBody(),
+            ));
   }
 }
