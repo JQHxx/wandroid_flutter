@@ -1,8 +1,10 @@
 import 'package:get/get.dart';
 import 'package:wandroid_flutter/data/api/chapters_api.dart';
 import 'package:wandroid_flutter/data/api/home_api.dart';
+import 'package:wandroid_flutter/data/api/navigation_api.dart';
 import 'package:wandroid_flutter/data/api/project_api.dart';
 import 'package:wandroid_flutter/pages/home/home_controller.dart';
+import 'package:wandroid_flutter/pages/navigation/navigation_controller.dart';
 import 'package:wandroid_flutter/pages/project/project_controller.dart';
 import 'package:wandroid_flutter/pages/public/public_controller.dart';
 
@@ -16,6 +18,10 @@ class GloabConfig {
     // 项目
     Get.lazyPut(() => ProjectController());
     Get.lazyPut(() => ProjectApi());
+
+    // 导航
+    Get.lazyPut(() => NavigationController());
+    Get.lazyPut(() => NavigationApi());
   
     // 公众号
     Get.lazyPut(() => PublicController());
