@@ -18,6 +18,7 @@ class _RegisterPageState extends State<RegisterPage> {
         builder: (controller) => Scaffold(
               appBar: AppBar(
                 centerTitle: false,
+                titleSpacing: 0,
                 title: Text("注册"),
               ),
               body: RegisterBody(),

@@ -53,6 +53,44 @@ class _ApiClient implements ApiClient {
   }
 
   @override
+  Future<ProjectTreeBean> projectTree() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.request<Map<String, dynamic>>(
+        '/project/tree/json',
+        queryParameters: queryParameters,
+        options: RequestOptions(
+            method: 'GET',
+            headers: <String, dynamic>{},
+            extra: _extra,
+            baseUrl: baseUrl),
+        data: _data);
+    final value = ProjectTreeBean.fromJson(_result.data);
+    return value;
+  }
+
+  @override
+  Future<ProjectListBean> projectList(page, cid) async {
+    ArgumentError.checkNotNull(page, 'page');
+    ArgumentError.checkNotNull(cid, 'cid');
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'cid': cid};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.request<Map<String, dynamic>>(
+        '/project/list/$page/json',
+        queryParameters: queryParameters,
+        options: RequestOptions(
+            method: 'GET',
+            headers: <String, dynamic>{},
+            extra: _extra,
+            baseUrl: baseUrl),
+        data: _data);
+    final value = ProjectListBean.fromJson(_result.data);
+    return value;
+  }
+
+  @override
   Future<ChaptersBean> wxarticleChapters() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};

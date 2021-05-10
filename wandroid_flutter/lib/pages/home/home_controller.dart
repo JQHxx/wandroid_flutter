@@ -15,13 +15,13 @@ class HomeController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    requestHomeBannerData();
-    requestArticlesData();
   }
 
   @override
   void onReady() {
     super.onReady();
+    requestHomeBannerData();
+    requestArticlesData();
   }
 
   requestHomeBannerData() {

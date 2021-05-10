@@ -28,6 +28,7 @@ class _HomePageState extends State<HomePage> {
                       });
                 }),
                 title: Text("首页"),
+                titleSpacing: 0,
                 actions: [
                   IconButton(
                       icon: Icon(Icons.search),

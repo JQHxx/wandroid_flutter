@@ -17,6 +17,7 @@ class _LoginPageState extends State<LoginPage> {
     return GetBuilder<LoginController>(builder: (controller) => Scaffold(
       appBar: AppBar(
         centerTitle: false,
+        titleSpacing: 0,
         title: Text("登录"),
       ),
       body: LoginBody(),

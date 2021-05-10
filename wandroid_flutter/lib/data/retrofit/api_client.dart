@@ -4,6 +4,8 @@ import 'package:retrofit/retrofit.dart';
 import 'package:wandroid_flutter/data/model/chapters_bean.dart';
 import 'package:wandroid_flutter/data/model/home_article_bean.dart';
 import 'package:wandroid_flutter/data/model/home_banner_bean.dart';
+import 'package:wandroid_flutter/data/model/project_list_bean.dart';
+import 'package:wandroid_flutter/data/model/project_tree_bean.dart';
 import 'base_dio.dart';
 part 'api_client.g.dart';
 
@@ -28,10 +30,24 @@ abstract class ApiClient {
   @GET("/article/list/{page}/json")
   Future<HomeArticleBean> homeArticles(@Path() int page);
 
-// ignore: slash_for_doc_comments
-/**
- * 获取公众号列表
- */
+  // ignore: slash_for_doc_comments
+  /**
+   * 获取项目分类
+   */
+  @GET("/project/tree/json")
+  Future<ProjectTreeBean> projectTree();
+
+  // ignore: slash_for_doc_comments
+  /**
+   * 获取项目分类
+   */
+  @GET("/project/list/{page}/json")
+  Future<ProjectListBean> projectList(@Path() int page, @Query("cid") int cid);
+
+  // ignore: slash_for_doc_comments
+  /**
+   * 获取公众号列表
+   */
   @GET("/wxarticle/chapters/json")
   Future<ChaptersBean> wxarticleChapters();
 }

@@ -7,12 +7,12 @@ class PublicController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    requestData();
   }
 
   @override
-  void onReady() async {
+  void onReady() {
     super.onReady();
+    requestData();
   }
 
   requestData() {
