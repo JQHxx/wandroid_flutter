@@ -11,13 +11,15 @@ class AppImageWidget extends StatelessWidget {
     @required this.imageUrl,
     this.width,
     this.height,
-    this.fit = BoxFit.cover,
+    this.fit = BoxFit.cover, this.isShowLoading = true,
+
   }) : super(key: key);
 
   final String imageUrl;
   final BoxFit fit;
   double width;
   double height;
+  final bool isShowLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -28,13 +30,15 @@ class AppImageWidget extends StatelessWidget {
         fit: this.fit,
         alignment: Alignment.center,
         imageUrl: this.imageUrl,
-        placeholder: (context, url) => Container(
+        placeholder: (context, url) {
+          return !this.isShowLoading ? Container() : Container(
           width: 15,
           height: 15,
           alignment: Alignment.center,
           child: CircularProgressIndicator(
           ),
-        ),
+        );
+        },
         errorWidget: (context, url, error) => Icon(Icons.error),
       ),
     );
