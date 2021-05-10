@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:wandroid_flutter/routes/app_pages.dart';
 import 'package:wandroid_flutter/theme/app_theme.dart';
 
 class MainDrawerWidget extends StatelessWidget {
@@ -9,8 +11,13 @@ class MainDrawerWidget extends StatelessWidget {
       UserAccountsDrawerHeader(
         accountName: Text('username'),
         accountEmail: Text('username@163.com'),
-        currentAccountPicture: CircleAvatar(
-          child: Icon(Icons.home),
+        currentAccountPicture: GestureDetector(
+          child: CircleAvatar(
+            child: Icon(Icons.home),
+          ),
+          onTap: () {
+            Get.toNamed(Routes.LOGIN);
+          },
         ),
         onDetailsPressed: () {},
         otherAccountsPictures: <Widget>[

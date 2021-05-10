@@ -18,7 +18,7 @@ class _NavigationPageState extends State<NavigationPage> {
         centerTitle: false,
         leading: Builder(builder: (context) {
           return IconButton(
-              icon: Icon(Icons.wifi_tethering),
+              icon: Icon(Icons.menu),
               onPressed: () {
                 Scaffold.of(context).openDrawer();
               });

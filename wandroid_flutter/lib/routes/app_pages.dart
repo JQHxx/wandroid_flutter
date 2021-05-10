@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:wandroid_flutter/pages/login/login_binding.dart';
+import 'package:wandroid_flutter/pages/login/login_page.dart';
 import 'package:wandroid_flutter/pages/main/main_binding.dart';
 import 'package:wandroid_flutter/pages/main/main_page.dart';
 import 'package:wandroid_flutter/pages/search/search_binding.dart';
@@ -14,6 +16,10 @@ abstract class AppPages {
         name: Routes.SEARCH,
         page: () => SearchPage(),
         binding: SearchBinding()),
+    GetPage(
+        name: Routes.LOGIN,
+        page: () => LoginPage(),
+        binding: LoginBinding()),
   ];
 }
 

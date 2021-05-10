@@ -22,7 +22,7 @@ class _PublicPageState extends State<PublicPage> {
           centerTitle: false,
           leading: Builder(builder: (context) {
             return IconButton(
-                icon: Icon(Icons.wifi_tethering),
+                icon: Icon(Icons.menu),
                 onPressed: () {
                   Scaffold.of(context).openDrawer();
                 });
