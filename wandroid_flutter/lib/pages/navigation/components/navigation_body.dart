@@ -32,7 +32,7 @@ class NavigationBody extends GetView<NavigationController> {
                       Container(
                         alignment: Alignment.center,
                         height: 50,
-                        child: Text("测试"),
+                        child: Text(controller.leftTabs[position].name),
                       )
                     ],
                   ),
@@ -42,14 +42,14 @@ class NavigationBody extends GetView<NavigationController> {
                 },
               );
             },
-            itemCount: 100,
+            itemCount: controller.leftTabs.length,
           ),
         ),
         Expanded(
             child: Container(
           padding: EdgeInsets.only(top: 10, bottom: 10),
           child: ListView(
-            children: [NavigationWrapContent()],
+            children: [controller.currentContentWidget],
           ),
         ))
       ],
