@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:get/get.dart';
+import 'package:wandroid_flutter/utils/app_log.dart';
 import 'package:wandroid_flutter/widgets/refresh_widget.dart';
+import 'package:wandroid_flutter/widgets/webview_browser.dart';
 
 import '../home_controller.dart';
 
@@ -37,33 +39,41 @@ class PublicBody extends GetView<HomeController> {
               ),
             );
           } else {
-            return Container(
-              decoration: BoxDecoration(
-                  border: Border(
-                      bottom: BorderSide(width: 1, color: Color(0xffe5e5e5)))),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(left: 10, right: 10, top: 10),
-                    child: Text(
-                      controller.articles[position - 1].title,
-                      style: TextStyle(fontSize: 14),
-                      maxLines: 3,
+            return GestureDetector(
+              child: Container(
+                decoration: BoxDecoration(
+                    border: Border(
+                        bottom:
+                            BorderSide(width: 1, color: Color(0xffe5e5e5)))),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 10, right: 10, top: 10),
+                      child: Text(
+                        controller.articles[position - 1].title,
+                        style: TextStyle(fontSize: 14),
+                        maxLines: 3,
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                        left: 10, right: 10, bottom: 10, top: 10),
-                    child: Text(
-                      controller.articles[position - 1].niceShareDate,
-                      style: TextStyle(fontSize: 13),
-                      maxLines: 1,
-                    ),
-                  )
-                ],
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: 10, right: 10, bottom: 10, top: 10),
+                      child: Text(
+                        controller.articles[position - 1].niceShareDate,
+                        style: TextStyle(fontSize: 13),
+                        maxLines: 1,
+                      ),
+                    )
+                  ],
+                ),
               ),
+              onTap: () {
+                AppLogger.d(controller.articles[position - 1].link);
+                Get.to(WebViewBrowser(),
+                    arguments: controller.articles[position - 1].link);
+              },
             );
           }
         },
