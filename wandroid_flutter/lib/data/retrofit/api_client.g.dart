@@ -91,6 +91,23 @@ class _ApiClient implements ApiClient {
   }
 
   @override
+  Future<NavigationBean> naviData() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.request<Map<String, dynamic>>('/navi/json',
+        queryParameters: queryParameters,
+        options: RequestOptions(
+            method: 'GET',
+            headers: <String, dynamic>{},
+            extra: _extra,
+            baseUrl: baseUrl),
+        data: _data);
+    final value = NavigationBean.fromJson(_result.data);
+    return value;
+  }
+
+  @override
   Future<ChaptersBean> wxarticleChapters() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};

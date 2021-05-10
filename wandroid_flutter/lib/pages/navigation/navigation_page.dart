@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:wandroid_flutter/pages/drawer/main_drawer.dart';
 import 'package:wandroid_flutter/routes/app_pages.dart';
 
+import 'components/navigation_body.dart';
 import 'navigation_controller.dart';
 
 class NavigationPage extends StatefulWidget {
@@ -36,6 +37,7 @@ class _NavigationPageState extends State<NavigationPage> {
                       })
                 ],
               ),
+              body: NavigationBody(),
               drawer: Drawer(
                 child: MainDrawerWidget(),
               ),
