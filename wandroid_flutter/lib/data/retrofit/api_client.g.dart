@@ -34,12 +34,13 @@ class _ApiClient implements ApiClient {
   }
 
   @override
-  Future<HttpResponse<String>> homeArticles(page) async {
+  Future<HomeArticleBean> homeArticles(page) async {
     ArgumentError.checkNotNull(page, 'page');
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    final _result = await _dio.request<String>('/article/list/$page/json',
+    final _result = await _dio.request<Map<String, dynamic>>(
+        '/article/list/$page/json',
         queryParameters: queryParameters,
         options: RequestOptions(
             method: 'GET',
@@ -47,9 +48,8 @@ class _ApiClient implements ApiClient {
             extra: _extra,
             baseUrl: baseUrl),
         data: _data);
-    final value = _result.data;
-    final httpResponse = HttpResponse(value, _result);
-    return httpResponse;
+    final value = HomeArticleBean.fromJson(_result.data);
+    return value;
   }
 
   @override

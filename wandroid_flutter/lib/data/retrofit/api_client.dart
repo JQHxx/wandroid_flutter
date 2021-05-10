@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:wandroid_flutter/data/model/chapters_bean.dart';
+import 'package:wandroid_flutter/data/model/home_article_bean.dart';
 import 'package:wandroid_flutter/data/model/home_banner_bean.dart';
 import 'base_dio.dart';
 part 'api_client.g.dart';
@@ -25,7 +26,7 @@ abstract class ApiClient {
    * 获取首页文章列表
    */
   @GET("/article/list/{page}/json")
-  Future<HttpResponse<String>> homeArticles(@Path() int page);
+  Future<HomeArticleBean> homeArticles(@Path() int page);
 
 // ignore: slash_for_doc_comments
 /**
