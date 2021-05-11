@@ -25,7 +25,7 @@ class PublicBody extends GetView<HomeController> {
       child: ListView.builder(
         itemBuilder: (context, position) {
           if (0 == position) {
-            return Container(
+            return controller.banners.length == 0 ? Container() : Container(
               height: 180,
               child: Swiper(
                 itemBuilder: (BuildContext context, int index) {
@@ -34,7 +34,7 @@ class PublicBody extends GetView<HomeController> {
                     fit: BoxFit.fill,
                   );
                 },
-                autoplay: true,
+                autoplay: controller.banners.length == 0 ? false : true,
                 itemCount: controller.banners.length,
                 autoplayDelay: 5000,
               ),
