@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:wandroid_flutter/pages/main/main_binding.dart';
 import 'package:wandroid_flutter/pages/main/main_page.dart';
@@ -12,6 +13,8 @@ import 'package:wandroid_flutter/utils/screen_adapter.dart';
 void main() async {
   //ScreenAdapter.init(Get.context);
   WidgetsFlutterBinding.ensureInitialized();
+  // 屏幕方向
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   await GloabConfig.init();
   // 全局依赖注入
   await DenpendencyInjection.init();

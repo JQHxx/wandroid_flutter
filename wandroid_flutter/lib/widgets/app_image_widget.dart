@@ -1,4 +1,5 @@
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -35,8 +36,7 @@ class AppImageWidget extends StatelessWidget {
           width: 15,
           height: 15,
           alignment: Alignment.center,
-          child: CircularProgressIndicator(
-          ),
+          child: CupertinoActivityIndicator(),
         );
         },
         errorWidget: (context, url, error) => Icon(Icons.error),
