@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:wandroid_flutter/utils/app_log.dart';
 import 'package:wandroid_flutter/widgets/app_image_widget.dart';
 import 'package:wandroid_flutter/widgets/refresh_widget.dart';
+import 'package:wandroid_flutter/widgets/tap_widget.dart';
 import 'package:wandroid_flutter/widgets/webview_browser.dart';
 
 import '../home_controller.dart';
@@ -40,7 +41,7 @@ class PublicBody extends GetView<HomeController> {
               ),
             );
           } else {
-            return GestureDetector(
+            return TapWidget(
               child: Container(
                 decoration: BoxDecoration(
                     border: Border(

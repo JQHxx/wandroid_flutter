@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wandroid_flutter/widgets/alive_keeper.dart';
+import 'package:wandroid_flutter/widgets/tap_widget.dart';
 import '../navigation_controller.dart';
 import 'navigation_wrap_content.dart';
 
@@ -13,7 +14,7 @@ class NavigationBody extends GetView<NavigationController> {
           width: 90,
           child: ListView.builder(
             itemBuilder: (context, position) {
-              return GestureDetector(
+              return TapWidget(
                 child: Container(
                   color: controller.currentSelectIndex == position
                       ? Colors.white
