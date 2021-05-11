@@ -8,13 +8,13 @@ import 'components/navigation_wrap_content.dart';
 
 class NavigationController extends GetxController {
   int currentSelectIndex = 0;
-  List<Map<String, Widget>> tabContents = [];
+  Map<int, Widget> tabContents = Map<int, Widget>();
   List<NavigationData> leftTabs = [];
   Widget currentContentWidget = Container();
 
   changeItem(position) {
     currentSelectIndex = position;
-    currentContentWidget = tabContents[currentSelectIndex][leftTabs[currentSelectIndex].cid];
+    currentContentWidget = tabContents[leftTabs[currentSelectIndex].cid];
     update();
   }
 
@@ -27,13 +27,12 @@ class NavigationController extends GetxController {
   requestLeftTabsData() {
     NavigationRepository().naviData().then((value) {
       leftTabs = value.data;
-      tabContents = leftTabs.map((e) {
-        Map map = Map();
-        map[e.cid] = Aliveer(child: NavigationWrapContent());
-        return map;
-      }).toList();
+      leftTabs.forEach((element) {
+        tabContents[element.cid] =
+            Aliveer(child: NavigationWrapContent(name: element.name));
+      });
       currentSelectIndex = 0;
-      currentContentWidget = tabContents[currentSelectIndex][leftTabs[currentSelectIndex].cid];
+      currentContentWidget = tabContents[leftTabs[currentSelectIndex].cid];
       update();
     });
   }

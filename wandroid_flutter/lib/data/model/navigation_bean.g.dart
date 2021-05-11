@@ -69,7 +69,7 @@ NavigationArticles _$NavigationArticlesFromJson(Map<String, dynamic> json) {
     json['publishTime'] as int,
     json['realSuperChapterId'] as int,
     json['selfVisible'] as int,
-    json['shareDate'] as String,
+    json['shareDate'] as int,
     json['shareUser'] as String,
     json['superChapterId'] as int,
     json['superChapterName'] as String,

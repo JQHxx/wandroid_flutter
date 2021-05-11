@@ -23,7 +23,7 @@ class NavigationWrapItem extends StatelessWidget {
         child: Text(this.text),
       ),
       onTap: () {
-        print("tap");
+        print("tap" + this.text);
       },
     );
   }

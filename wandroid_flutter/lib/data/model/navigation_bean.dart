@@ -123,7 +123,7 @@ class NavigationArticles extends Object {
 	int selfVisible;
 
 	@JsonKey(name: 'shareDate')
-	String shareDate;
+	int shareDate;
 
 	@JsonKey(name: 'shareUser')
 	String shareUser;

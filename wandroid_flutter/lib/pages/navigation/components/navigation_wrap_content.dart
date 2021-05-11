@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../navigation_controller.dart';
 import 'navigation_wrap_item.dart';
 
-class NavigationWrapContent extends StatefulWidget {
-  NavigationWrapContent({Key key}) : super(key: key);
+// GetView<NavigationController>
+class NavigationWrapContent extends StatelessWidget {
+  final String name;
+  NavigationWrapContent({Key key, this.name}) : super(key: key);
 
-  @override
-  _NavigationWrapContentState createState() => _NavigationWrapContentState();
-}
-
-class _NavigationWrapContentState extends State<NavigationWrapContent> {
   List<String> _list = [
     '盗墓笔记',
     '鬼吹灯',
@@ -24,7 +23,10 @@ class _NavigationWrapContentState extends State<NavigationWrapContent> {
   ];
 
   List<Widget> _generateList() {
-    return _list.map((item) => NavigationWrapItem(text: item)).toList();
+    List tempList = [];
+    tempList = _list.map((item) => NavigationWrapItem(text: item)).toList();
+    tempList.add(NavigationWrapItem(text: this.name));
+    return tempList;
   }
 
   @override
