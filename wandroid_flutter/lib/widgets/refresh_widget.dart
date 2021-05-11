@@ -33,13 +33,13 @@ class RefreshWidget extends StatelessWidget {
       header: ClassicHeader(
         releaseText: '松开刷新',
         completeText: '刷新完成',
-        refreshingText: '刷新中....',
+        refreshingText: '加载中...',
         idleText: '下拉刷新',
       ),
       footer: ClassicFooter(
         idleText: '上拉刷新',
         canLoadingText: '松开加载更多',
-        loadingText: '刷新中...',
+        loadingText: '加载中...',
         noDataText: '没有更多了',
       ),
       controller: this.controller,
