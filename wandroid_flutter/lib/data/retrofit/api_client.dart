@@ -7,6 +7,7 @@ import 'package:wandroid_flutter/data/model/home_banner_bean.dart';
 import 'package:wandroid_flutter/data/model/navigation_bean.dart';
 import 'package:wandroid_flutter/data/model/project_list_bean.dart';
 import 'package:wandroid_flutter/data/model/project_tree_bean.dart';
+import 'package:wandroid_flutter/data/model/system_bean.dart';
 import 'base_dio.dart';
 part 'api_client.g.dart';
 
@@ -44,6 +45,13 @@ abstract class ApiClient {
    */
   @GET("/project/list/{page}/json")
   Future<ProjectListBean> projectList(@Path() int page, @Query("cid") int cid);
+
+  // ignore: slash_for_doc_comments
+  /**
+   * 体系
+   */
+  @GET("/tree/json")
+  Future<SystemBean> treeData();
 
   // ignore: slash_for_doc_comments
   /**
