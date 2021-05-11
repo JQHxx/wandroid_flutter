@@ -22,7 +22,7 @@ dependencies:
   pull_to_refresh: ^1.5.8
   shared_preferences: ^0.5.12+4
   webview_flutter: ^2.0.4
-  # 当没有数据时，不要开启自动轮播
+  # 当没有数据时，不要开启自动轮播,dddddddddddddddddddddddddddddddddddddddd∂∂∂∂∂∂∂∂∂∂∂dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂∂
   flutter_swiper: ^1.1.6
   fluttertoast: ^8.0.3
   logger: ^0.9.1

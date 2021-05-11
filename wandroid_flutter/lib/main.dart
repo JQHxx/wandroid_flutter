@@ -7,8 +7,10 @@ import 'package:wandroid_flutter/routes/app_pages.dart';
 import 'package:wandroid_flutter/theme/app_theme.dart';
 import 'package:wandroid_flutter/utils/dependency_injection.dart';
 import 'package:wandroid_flutter/utils/global_config.dart';
+import 'package:wandroid_flutter/utils/screen_adapter.dart';
 
 void main() async {
+  //ScreenAdapter.init(Get.context);
   WidgetsFlutterBinding.ensureInitialized();
   await GloabConfig.init();
   // 全局依赖注入
