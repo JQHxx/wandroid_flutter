@@ -30,8 +30,18 @@ class RefreshWidget extends StatelessWidget {
       enablePullUp: this.enablePullUp,
       onRefresh: this.onRefresh,
       onLoading: this.onLoading,
-      header: ClassicHeader(),
-      footer: ClassicFooter(),
+      header: ClassicHeader(
+        releaseText: '松开刷新',
+        completeText: '刷新完成',
+        refreshingText: '刷新中....',
+        idleText: '下拉刷新',
+      ),
+      footer: ClassicFooter(
+        idleText: '上拉刷新',
+        canLoadingText: '松开加载更多',
+        loadingText: '刷新中...',
+        noDataText: '没有更多了',
+      ),
       controller: this.controller,
       child: this.child,
     );
