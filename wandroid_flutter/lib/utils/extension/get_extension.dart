@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
-import 'package:wandroid_flutter/widgets/Loading.dart';
+import 'package:wandroid_flutter/widgets/loading.dart';
 
 extension GetExtension on GetInterface {
   // ignore: slash_for_doc_comments

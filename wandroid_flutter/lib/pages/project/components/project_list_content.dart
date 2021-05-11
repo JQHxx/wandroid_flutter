@@ -111,6 +111,9 @@ class _ProjectListContentState extends State<ProjectListContent> {
     currentPage = 1;
     ProjectRepository().projectList(currentPage, cid).then((value) {
       refreshController.refreshCompleted();
+      if (value.data.over) {
+        refreshController.loadNoData();
+      }
       setState(() {
         datas = value.data.datas;
       });
@@ -121,6 +124,9 @@ class _ProjectListContentState extends State<ProjectListContent> {
     currentPage += 1;
     ProjectRepository().projectList(currentPage, cid).then((value) {
       refreshController.loadComplete();
+      if (value.data.over) {
+        refreshController.loadNoData();
+      }
       setState(() {
         datas.addAll(value.data.datas);
       });
