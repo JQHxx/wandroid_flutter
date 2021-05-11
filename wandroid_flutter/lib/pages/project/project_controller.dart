@@ -25,6 +25,12 @@ class ProjectController extends GetxController {
     requestProjectTreeData();
   }
 
+  @override
+  void onClose() {
+    tabController.dispose();
+    super.onClose();
+  }
+
   requestProjectTreeData() {
     ProjectRepository().projectTree().then((value) {
       tabDatas = value.data;

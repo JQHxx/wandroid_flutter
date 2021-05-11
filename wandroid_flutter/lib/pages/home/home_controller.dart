@@ -18,6 +18,12 @@ class HomeController extends GetxController {
   }
 
   @override
+  void onClose() {
+    refreshController.dispose();
+    super.onClose();
+  }
+
+  @override
   void onReady() {
     super.onReady();
     requestHomeBannerData();

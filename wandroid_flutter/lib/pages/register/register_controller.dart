@@ -16,4 +16,12 @@ class RegisterController extends GetxController {
   void onReady() {
     super.onReady();
   }
+
+      @override
+  void onClose() {
+    userNameController.dispose();
+    passwordController.dispose();
+    surePasswordController.dispose();
+    super.onClose();
+  }
 }
