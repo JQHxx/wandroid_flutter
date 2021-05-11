@@ -39,7 +39,7 @@ class AppImageWidget extends StatelessWidget {
           child: CupertinoActivityIndicator(),
         );
         },
-        errorWidget: (context, url, error) => Icon(Icons.error),
+        errorWidget: (context, url, error) => Image.asset("assets/images/common_nodata.png"),
       ),
     );
   }
