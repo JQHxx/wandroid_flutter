@@ -38,6 +38,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               body: PublicBody(),
+              drawerEdgeDragWidth: 0,
               drawer: Drawer(
                 child: MainDrawerWidget(),
               ),

@@ -36,6 +36,7 @@ class _SystemPageState extends State<SystemPage> {
                 ],
               ),
               body: SystemBody(),
+              drawerEdgeDragWidth: 0,
               drawer: Drawer(
                 child: MainDrawerWidget(),
               ),

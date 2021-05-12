@@ -38,6 +38,7 @@ class _NavigationPageState extends State<NavigationPage> {
                 ],
               ),
               body: NavigationBody(),
+              drawerEdgeDragWidth: 0,
               drawer: Drawer(
                 child: MainDrawerWidget(),
               ),

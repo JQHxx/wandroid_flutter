@@ -37,6 +37,7 @@ class _ProjectPageState extends State<ProjectPage> {
                 ],
               ),
               body: ProjectBody(),
+              drawerEdgeDragWidth: 0,
               drawer: Drawer(
                 child: MainDrawerWidget(),
               ),

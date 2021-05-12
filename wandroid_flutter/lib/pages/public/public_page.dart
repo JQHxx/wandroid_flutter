@@ -37,6 +37,7 @@ class _PublicPageState extends State<PublicPage> {
           ],
         ),
         body: PublicBody(),
+        drawerEdgeDragWidth: 0,
         drawer: Drawer(
           child: MainDrawerWidget(),
         ),
