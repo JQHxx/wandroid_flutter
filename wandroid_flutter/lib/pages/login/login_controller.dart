@@ -13,6 +13,7 @@ class LoginController extends GetxController {
   @override
   void onReady() {
     super.onReady();
+
   }
 
     @override

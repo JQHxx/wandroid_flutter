@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:wandroid_flutter/data/repositories/project_repository.dart';
 import 'package:wandroid_flutter/pages/project/components/project_list_content.dart';
+import 'package:wandroid_flutter/utils/app_log.dart';
+import 'package:wandroid_flutter/utils/notification_center.dart';
 import 'package:wandroid_flutter/widgets/alive_keeper.dart';
 
 class ProjectController extends GetxController {
@@ -22,6 +24,9 @@ class ProjectController extends GetxController {
   @override
   void onReady() {
     super.onReady();
+    NotificationCenter.instance.addObserver("home", 2, (object) {
+      AppLogger.d(object);
+    });
     requestProjectTreeData();
   }
 

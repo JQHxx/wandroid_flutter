@@ -3,6 +3,8 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:wandroid_flutter/data/model/home_article_bean.dart';
 import 'package:wandroid_flutter/data/model/home_banner_bean.dart';
 import 'package:wandroid_flutter/data/repositories/home_repository.dart';
+import 'package:wandroid_flutter/utils/app_log.dart';
+import 'package:wandroid_flutter/utils/notification_center.dart';
 
 class HomeController extends GetxController {
   RefreshController refreshController =
@@ -26,6 +28,9 @@ class HomeController extends GetxController {
   @override
   void onReady() {
     super.onReady();
+    NotificationCenter.instance.addObserver("home", 1, (object) {
+      AppLogger.d(object);
+    });
     requestHomeBannerData();
     requestArticlesData();
   }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wandroid_flutter/routes/app_pages.dart';
 import 'package:wandroid_flutter/utils/app_log.dart';
+import 'package:wandroid_flutter/utils/notification_center.dart';
 import 'package:wandroid_flutter/widgets/app_widget.dart';
 
 class AvatarHeader extends StatelessWidget {
@@ -42,9 +43,12 @@ class AvatarHeader extends StatelessWidget {
         ),
       ),
       onTap: () {
+        NotificationCenter.instance.postNotification("home", "登录");
+        /*
         Get.toNamed(Routes.LOGIN).then((value) {
           AppLogger.d(value);
         });
+        */
       },
     );
   }
