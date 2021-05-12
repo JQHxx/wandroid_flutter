@@ -5,8 +5,8 @@ class AppWidget extends StatelessWidget {
   final double width;
   final Widget child;
   final Color backgroundColor;
-  final double radius;
-  final Border border;
+  final BorderRadius borderRadius;
+  final BoxBorder border;
   final Alignment alignment;
   final EdgeInsets padding;
   final EdgeInsets margin;
@@ -20,13 +20,14 @@ class AppWidget extends StatelessWidget {
       this.width,
       @required this.child,
       this.backgroundColor = Colors.transparent,
-      this.radius = 0,
       this.border,
       this.alignment = Alignment.center,
       this.padding,
       this.boxShadow,
       this.margin,
-      this.onTap, this.constraints})
+      this.onTap,
+      this.constraints,
+      this.borderRadius})
       : super(key: key);
 
   @override
@@ -44,7 +45,7 @@ class AppWidget extends StatelessWidget {
             color: backgroundColor,
             border:
                 this.border ?? Border.all(width: 0, color: Colors.transparent),
-            borderRadius: BorderRadius.circular(radius),
+            borderRadius: borderRadius ?? BorderRadius.circular(0),
             boxShadow: boxShadow ?? []),
         child: child,
       ),

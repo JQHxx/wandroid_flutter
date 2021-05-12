@@ -21,7 +21,7 @@ class AvatarHeader extends StatelessWidget {
                   height: 50
                 ),
                 backgroundColor: Colors.orange,
-                radius: 25,
+                borderRadius: BorderRadius.circular(25),
                 child: Text("12"),
               ),
               SizedBox(
