@@ -24,7 +24,7 @@ class ProjectController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    NotificationCenter.instance.addObserver("home", 2, (object) {
+    NotificationCenter.instance.addObserver("home", "ProjectController", (object) {
       AppLogger.d(object);
     });
     requestProjectTreeData();

@@ -28,7 +28,7 @@ class HomeController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    NotificationCenter.instance.addObserver("home", 1, (object) {
+    NotificationCenter.instance.addObserver("home", "HomeController", (object) {
       AppLogger.d(object);
     });
     requestHomeBannerData();
