@@ -16,8 +16,10 @@ class AvatarHeader extends StatelessWidget {
             children: [
               AppWidget(
                 margin: EdgeInsets.only(left: 10),
-                height: 50,
-                width: 50,
+                constraints: BoxConstraints.expand(
+                  width: 50,
+                  height: 50
+                ),
                 backgroundColor: Colors.orange,
                 radius: 25,
                 child: Text("12"),

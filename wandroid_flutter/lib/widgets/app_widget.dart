@@ -12,6 +12,7 @@ class AppWidget extends StatelessWidget {
   final EdgeInsets margin;
   final List<BoxShadow> boxShadow;
   final Function onTap;
+  final BoxConstraints constraints;
 
   AppWidget(
       {Key key,
@@ -25,7 +26,7 @@ class AppWidget extends StatelessWidget {
       this.padding,
       this.boxShadow,
       this.margin,
-      this.onTap})
+      this.onTap, this.constraints})
       : super(key: key);
 
   @override
@@ -33,6 +34,7 @@ class AppWidget extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        constraints: constraints,
         width: width,
         height: height,
         padding: padding ?? EdgeInsets.zero,
