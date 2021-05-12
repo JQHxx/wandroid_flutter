@@ -11,6 +11,7 @@ class AppWidget extends StatelessWidget {
   final EdgeInsets padding;
   final EdgeInsets margin;
   final List<BoxShadow> boxShadow;
+  final Function onTap;
 
   AppWidget(
       {Key key,
@@ -22,24 +23,29 @@ class AppWidget extends StatelessWidget {
       this.border,
       this.alignment = Alignment.center,
       this.padding,
-      this.boxShadow, this.margin})
+      this.boxShadow,
+      this.margin,
+      this.onTap})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: width,
-      height: height,
-      padding: padding ?? EdgeInsets.zero,
-      margin: margin ?? EdgeInsets.zero,
-      alignment: alignment,
-      decoration: BoxDecoration(
-          color: backgroundColor,
-          border:
-              this.border ?? Border.all(width: 0, color: Colors.transparent),
-          borderRadius: BorderRadius.circular(radius),
-          boxShadow: boxShadow ?? []),
-      child: child,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: width,
+        height: height,
+        padding: padding ?? EdgeInsets.zero,
+        margin: margin ?? EdgeInsets.zero,
+        alignment: alignment,
+        decoration: BoxDecoration(
+            color: backgroundColor,
+            border:
+                this.border ?? Border.all(width: 0, color: Colors.transparent),
+            borderRadius: BorderRadius.circular(radius),
+            boxShadow: boxShadow ?? []),
+        child: child,
+      ),
     );
   }
 }
