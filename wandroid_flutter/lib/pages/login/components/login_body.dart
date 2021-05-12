@@ -60,7 +60,7 @@ class LoginBody extends GetView<LoginController> {
           buttonColor: kPrimaryColor,
           buttonTitle: "登录",
           height: 50,
-          tapEvent: () {},
+          onTap: () {},
         ),
         Container(
           height: 50,

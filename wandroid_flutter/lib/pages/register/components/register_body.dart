@@ -80,7 +80,7 @@ class RegisterBody extends GetView<RegisterController> {
           buttonColor: kPrimaryColor,
           buttonTitle: "注册",
           height: 50,
-          tapEvent: () {},
+          onTap: () {},
         )
       ],
     );
