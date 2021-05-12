@@ -20,7 +20,7 @@ class TapWidgetState extends State<TapWidget> {
       child: AnimatedContainer(
         duration: Duration(milliseconds: 500),
         foregroundDecoration: BoxDecoration(
-          color: isDown ? Colors.white.withOpacity(0.5) : Colors.transparent,
+          color: isDown ? Colors.white.withOpacity(0.8) : Colors.transparent,
         ),
         child: widget.child,
       ),

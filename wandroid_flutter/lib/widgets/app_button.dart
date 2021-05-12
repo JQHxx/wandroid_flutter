@@ -4,7 +4,7 @@ class AppButton extends StatelessWidget {
   final Color buttonColor;
   final String buttonTitle;
   final Color buttonTitleColor;
-  final Object tapEvent;
+  final Function onTap;
   final double height;
   final double width;
   final double radius;
@@ -17,7 +17,7 @@ class AppButton extends StatelessWidget {
       this.buttonColor = Colors.black,
       this.buttonTitle = "按钮",
       this.height = 68,
-      this.tapEvent,
+      this.onTap,
       this.radius = 10.0,
       this.margin,
       this.padding,
@@ -28,10 +28,10 @@ class AppButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: this.tapEvent,
+      onTap: this.onTap,
       child: Container(
-        margin: this.margin ?? EdgeInsets.all(5),
-        padding: this.padding ?? EdgeInsets.all(5),
+        margin: this.margin ?? EdgeInsets.zero,
+        padding: this.padding ?? EdgeInsets.zero,
         height: this.height,
         width: this.width,
         // 边框

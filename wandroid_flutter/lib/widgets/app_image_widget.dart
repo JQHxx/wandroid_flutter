@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -12,8 +11,9 @@ class AppImageWidget extends StatelessWidget {
     @required this.imageUrl,
     this.width,
     this.height,
-    this.fit = BoxFit.cover, this.isShowLoading = true,
-
+    this.fit = BoxFit.cover,
+    this.isShowLoading = true,
+    this.errorWidget,
   }) : super(key: key);
 
   final String imageUrl;
@@ -21,6 +21,7 @@ class AppImageWidget extends StatelessWidget {
   double width;
   double height;
   final bool isShowLoading;
+  final Widget errorWidget;
 
   @override
   Widget build(BuildContext context) {
@@ -32,14 +33,17 @@ class AppImageWidget extends StatelessWidget {
         alignment: Alignment.center,
         imageUrl: this.imageUrl,
         placeholder: (context, url) {
-          return !this.isShowLoading ? Container() : Container(
-          width: 15,
-          height: 15,
-          alignment: Alignment.center,
-          child: CupertinoActivityIndicator(),
-        );
+          return !this.isShowLoading
+              ? Container()
+              : Container(
+                  width: 15,
+                  height: 15,
+                  alignment: Alignment.center,
+                  child: CupertinoActivityIndicator(),
+                );
         },
-        errorWidget: (context, url, error) => Image.asset("assets/images/common_nodata.png"),
+        errorWidget: (context, url, error) =>
+            this.errorWidget ?? Image.asset("assets/images/common_nodata.png"),
       ),
     );
   }

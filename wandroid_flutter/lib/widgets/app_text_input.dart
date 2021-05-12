@@ -28,7 +28,7 @@ class AppTextInput extends StatelessWidget {
       this.onChanged,
       this.maxLines = 1,
       this.height = 68,
-      this.controller,
+      @required this.controller,
       this.border,
       this.borderRadius = 30, this.style})
       : super(key: key);

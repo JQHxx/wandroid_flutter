@@ -4,23 +4,23 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 // 不能这样做
 // ignore: must_be_immutable
 class RefreshWidget extends StatelessWidget {
-  bool enablePullDown = true;
+  final bool enablePullDown;
   final bool enablePullUp;
   final RefreshController controller;
   final Widget child;
   // 下拉刷新回调
-  Function onRefresh;
+  final Function onRefresh;
   // 上拉加载
-  Function onLoading;
+  final Function onLoading;
 
   RefreshWidget(
       {Key key,
-      this.enablePullDown,
-      this.enablePullUp,
-      this.controller,
+      this.enablePullDown = true,
+      this.enablePullUp = true,
+      @required this.controller,
       this.onRefresh,
       this.onLoading,
-      this.child})
+      @required this.child})
       : super(key: key);
 
   @override
