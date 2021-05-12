@@ -10,6 +10,8 @@ import 'package:wandroid_flutter/utils/dependency_injection.dart';
 import 'package:wandroid_flutter/utils/global_config.dart';
 import 'package:wandroid_flutter/utils/screen_adapter.dart';
 
+import 'lang/TranslationService.dart';
+
 void main() async {
   //ScreenAdapter.init(Get.context);
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,6 +34,10 @@ void main() async {
   runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,
     initialRoute: Routes.INITIAL,
+    translations: TranslationService(),
+    locale: TranslationService.locale, // 将会按照此处指定的语言翻译
+    fallbackLocale:
+        TranslationService.fallbackLocale, // 添加一个回调语言选项，以备上面指定的语言翻译不存在
     builder: (context, child) => Scaffold(
       // Global GestureDetector that will dismiss the keyboard
       body: GestureDetector(
