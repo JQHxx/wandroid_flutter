@@ -9,4 +9,5 @@ abstract class Routes {
   static const HOME = '/home';
   static const SETTING = '/setting';
   static const SEARCH = '/search';
+  static const COLLECT = '/collect';
 }

@@ -66,4 +66,35 @@ abstract class ApiClient {
    */
   @GET("/wxarticle/chapters/json")
   Future<ChaptersBean> wxarticleChapters();
+
+
+    // ignore: slash_for_doc_comments
+  /**
+   * 注册
+   */
+  @POST("/user/register")
+  Future<HttpResponse<String>> register(@Field() String username, @Field() String password, @Field() String repassword);
+
+    // ignore: slash_for_doc_comments
+  /**
+   * 登录
+   */
+  @POST("/user/login")
+  Future<HttpResponse<String>> login(@Query('username') String username, @Query('password') String password);
+
+  // ignore: slash_for_doc_comments
+  /**
+   * 退出登录
+   */
+  @GET("/user/logout/json")
+  Future<HttpResponse<String>> logout();
+
+  // ignore: slash_for_doc_comments
+  /**
+   * 收藏列表(用来验证cookie的问题)
+   */
+  @GET("/lg/collect/list/{page}/json")
+  Future<HttpResponse<String>> collectList(@Path() int page);
+
+
 }

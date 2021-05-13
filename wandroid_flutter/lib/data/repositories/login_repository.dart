@@ -7,17 +7,18 @@
  * @FilePath: /todo/lib/data/repositories/login_repository.dart
  */
 import 'package:get/get.dart';
+import 'package:retrofit/dio.dart';
 import 'package:wandroid_flutter/data/api/login_api.dart';
 import 'package:wandroid_flutter/data/model/login_bean.dart';
 
 class LoginRepository {
   final LoginApi api = Get.find<LoginApi>();
 
-  Future<LoginBean> login(String username, String password) {
+  Future<HttpResponse<String>> login(String username, String password) {
     return api.login(username, password);
   }
 
-  Future<LoginBean> register(
+  Future<HttpResponse<String>> register(
       String username, String password, String repassword) {
     return api.register(username, password, repassword);
   }

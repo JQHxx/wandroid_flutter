@@ -61,7 +61,8 @@ class LoginBody extends GetView<LoginController> {
           buttonTitle: "登录",
           height: 50,
           onTap: () {
-            Get.back(result: '登录成功');
+            controller.requestLogin();
+            //Get.back(result: '登录成功');
           },
         ),
         Container(

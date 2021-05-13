@@ -6,42 +6,21 @@
  * @Description: In User Settings Edit
  * @FilePath: /todo/lib/data/api/login_api.dart
  */
-import 'package:get/get.dart';
-import 'package:wandroid_flutter/data/model/login_bean.dart';
+import 'package:retrofit/dio.dart';
+import 'package:wandroid_flutter/data/retrofit/api_client.dart';
 
 class LoginApi {
-
-  final String _login = '/user/login';
-  final String _register = '/user/register';
-  //final DioClient _dio = Get.find<DioClient>();
-
-  Future<LoginBean> login(String username, String password) async {
-    /*
-    AppResponse appResponse = await _dio.post(_login, queryParameters: {
-      "username": username,
-      "password": password,
-    });
-    if (appResponse.ok) {
-      return LoginBean.fromJson(appResponse.data);
-    } else {
-      throw appResponse.error;
-    }
-    */
+  Future<HttpResponse<String>> login(String username, String password) async {
+    HttpResponse response = await ApiClient().login(username, password);
+    //throw ApiException("错误信息");
+    return response;
   }
 
-  Future<LoginBean> register(
+  Future<HttpResponse<String>> register(
       String username, String password, String repassword) async {
-        /*
-    AppResponse appResponse = await _dio.post(_register, queryParameters: {
-      "username": username,
-      "password": password,
-      "repassword": password
-    });
-    if (appResponse.ok) {
-      return LoginBean.fromJson(appResponse.data);
-    } else {
-      throw appResponse.error;
-    }
-      */
+    HttpResponse response =
+        await ApiClient().register(username, password, repassword);
+    //throw ApiException("错误信息");
+    return response;
   }
 }

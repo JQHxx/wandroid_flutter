@@ -43,12 +43,10 @@ class AvatarHeader extends StatelessWidget {
         ),
       ),
       onTap: () {
-        NotificationCenter.instance.postNotification("home", "登录");
-        /*
+        //NotificationCenter.instance.postNotification("home", "登录");
         Get.toNamed(Routes.LOGIN).then((value) {
           AppLogger.d(value);
         });
-        */
       },
     );
   }

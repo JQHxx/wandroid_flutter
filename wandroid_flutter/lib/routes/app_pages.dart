@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:wandroid_flutter/pages/collect/collect_binding.dart';
+import 'package:wandroid_flutter/pages/collect/collect_page.dart';
 import 'package:wandroid_flutter/pages/login/login_binding.dart';
 import 'package:wandroid_flutter/pages/login/login_page.dart';
 import 'package:wandroid_flutter/pages/main/main_binding.dart';
@@ -24,6 +26,10 @@ abstract class AppPages {
         name: Routes.REGISTER,
         page: () => RegisterPage(),
         binding: RegisterBinding()),
+            GetPage(
+        name: Routes.COLLECT,
+        page: () => CollectPage(),
+        binding: CollectBinding()),
   ];
 }
 
