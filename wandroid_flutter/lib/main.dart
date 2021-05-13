@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:wandroid_flutter/data/retrofit/base_dio.dart';
 import 'package:wandroid_flutter/pages/main/main_binding.dart';
 import 'package:wandroid_flutter/pages/main/main_page.dart';
 import 'package:wandroid_flutter/routes/app_pages.dart';
@@ -17,6 +18,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // 屏幕方向
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  CookieDir.init();
   await GloabConfig.init();
   // 全局依赖注入
   await DenpendencyInjection.init();

@@ -1,5 +1,9 @@
+import 'dart:io';
 import 'package:dio/dio.dart';
+import 'package:dio_cookie_manager/dio_cookie_manager.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:cookie_jar/cookie_jar.dart';
 
 import 'base_error.dart';
 import 'header_interceptor.dart';
@@ -20,6 +24,8 @@ class BaseDio {
     dio.options = BaseOptions(
         receiveTimeout: 66000, connectTimeout: 66000); // 设置超时时间等 ...
     dio.interceptors.add(HeaderInterceptor()); // 添加拦截器，如 token之类，需要全局使用的参数
+    dio.interceptors
+        .add(CookieManager(PersistCookieJar(dir: CookieDir.cookiePath)));
     dio.interceptors.add(PrettyDioLogger(
       // 添加日志格式化工具类
       requestHeader: true,
@@ -63,5 +69,13 @@ class BaseDio {
     }
 
     return OtherError();
+  }
+}
+
+class CookieDir {
+  static String cookiePath;
+  static dynamic init() async {
+    Directory tempDir = await getTemporaryDirectory();
+    cookiePath = tempDir.path;
   }
 }

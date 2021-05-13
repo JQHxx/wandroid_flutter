@@ -31,6 +31,6 @@ EventBusUtils.getInstance().on<TestEvent>().listen((event) {
 EventBusUtils.getInstance().destroy();
 
 // 发送事件
-EventBusUtils.getInstance().fire(TestEvent("你是猪么", 200));
+EventBusUtils.getInstance().fire(TestEvent("这是测试", 200));
 
 */
