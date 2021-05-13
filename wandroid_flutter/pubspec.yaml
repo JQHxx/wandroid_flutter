@@ -28,6 +28,7 @@ dependencies:
   logger: ^0.9.1
   flutter_screenutil: ^5.0.0
   cached_network_image: ^2.5.1
+  event_bus: ^2.0.0
 
 dev_dependencies:
   flutter_test:
