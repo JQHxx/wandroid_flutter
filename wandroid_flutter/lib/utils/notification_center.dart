@@ -19,16 +19,21 @@ class NotificationCenter {
   }
 
   //创建Map来记录名称
-  Map<String, Map<String, NotificationResult>> postNameMap = Map();
+  Map<String, Map<String, List<NotificationResult>>> postNameMap = Map();
 
   //添加监听者方法
   addObserver(String postName, String tag, NotificationResult object) {
     ArgumentError.checkNotNull(object, 'object');
     try {
-      Map<String, NotificationResult> map = postNameMap[postName] ?? Map();
-      map[tag] = object;
+      Map<String, List<NotificationResult>> map = postNameMap[postName] ?? Map();
+      List<NotificationResult> results = map[tag] ?? [];
+      results.add(object);
+      map[tag] = results;
       postNameMap[postName] = map;
-    } catch (e) {}
+
+    } catch (e) {
+
+    }
   }
 
   //发送通知传值
@@ -36,10 +41,13 @@ class NotificationCenter {
     //检索Map是否含有postName
     try {
       if (postNameMap.containsKey(postName)) {
-        Map<String, NotificationResult> map = postNameMap[postName];
+        Map<String, List<NotificationResult>> map = postNameMap[postName];
         if (map != null) {
           map.values.forEach((element) {
-            element(object);
+            List<NotificationResult> values = element;
+            values.forEach((e) {
+              e(object);
+            });
           });
         }
       }
