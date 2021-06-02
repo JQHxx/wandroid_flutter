@@ -1,4 +1,8 @@
 PODS:
+  - BIJKPlayer (0.7.10)
+  - fijkplayer (0.8.8):
+    - BIJKPlayer (~> 0.7.10)
+    - Flutter
   - Flutter (1.0.0)
   - fluttertoast (0.0.2):
     - Flutter
@@ -18,6 +22,7 @@ PODS:
     - Flutter
 
 DEPENDENCIES:
+  - fijkplayer (from `.symlinks/plugins/fijkplayer/ios`)
   - Flutter (from `Flutter`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
@@ -27,10 +32,13 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - BIJKPlayer
     - FMDB
     - Toast
 
 EXTERNAL SOURCES:
+  fijkplayer:
+    :path: ".symlinks/plugins/fijkplayer/ios"
   Flutter:
     :path: Flutter
   fluttertoast:
@@ -45,6 +53,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/webview_flutter/ios"
 
 SPEC CHECKSUMS:
+  BIJKPlayer: 6727b075679eb5173b6d16f42ff2f33b9a757213
+  fijkplayer: 0d3793a2822d030ef5bba77f904bff1f7a91a115
   Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
   fluttertoast: 6122fa75143e992b1d3470f61000f591a798cc58
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
