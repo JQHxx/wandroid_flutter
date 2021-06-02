@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class CDrawerCell extends StatelessWidget {
   final Function onTap;
-  const CDrawerCell({Key key, this.onTap}) : super(key: key);
+  final String title;
+  const CDrawerCell({Key key, this.onTap, this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class CDrawerCell extends StatelessWidget {
                 SizedBox(
                   width: 10,
                 ),
-                Expanded(child: Text("data"))
+                Expanded(child: Text(title))
               ],
             )),
             Icon(Icons.arrow_right)

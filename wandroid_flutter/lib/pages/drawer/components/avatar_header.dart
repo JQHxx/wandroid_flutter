@@ -32,7 +32,7 @@ class AvatarHeader extends StatelessWidget {
                 ),
                 Expanded(
                   child: Text(
-                    "用户名用户名用户名用户名用户名用户名用户名用户名用户名用户名用户名用户名用户名用户名",
+                    "HJQ",
                     maxLines: 1,
                   ),
                 )

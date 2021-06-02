@@ -17,6 +17,7 @@ class MainDrawerWidget extends StatelessWidget {
             height: 15,
           ),
           CDrawerCell(
+            title: "收藏",
             onTap: () {
               Get.toNamed(Routes.COLLECT);
             },
