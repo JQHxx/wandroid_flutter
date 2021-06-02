@@ -29,7 +29,8 @@ abstract class AppPages {
             GetPage(
         name: Routes.COLLECT,
         page: () => CollectPage(),
-        binding: CollectBinding()),
+        binding: CollectBinding(),
+        transition: Transition.rightToLeft),
   ];
 }
 
